@@ -1,0 +1,2 @@
+module Rightscaler::Manage
+end

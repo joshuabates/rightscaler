@@ -1,8 +1,12 @@
 class Rightscaler::Account < Rightscaler::Resource
   
+  def self.set_auth_cookie(cookie)
+    Rightscaler::Resource.headers['cookie'] = cookie
+  end
+  
   def self.authenticate
     auth_cookie = extract_session_cookie(connection.head(site.to_s + "/login", headers))
-    Rightscaler::Resource.headers['cookie'] = auth_cookie
+    set_auth_cookie(auth_cookie)
   end
   
   private

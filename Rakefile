@@ -5,7 +5,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "rightscaler"
-    gem.summary = %Q{TODO}
+    gem.summary = %Q{An ActiveResource interface to the Rightscale API}
     gem.email = "joshuabates@gmail.com"
     gem.homepage = "http://github.com/joshuabates/rightscaler"
     gem.authors = ["Joshua Bates"]

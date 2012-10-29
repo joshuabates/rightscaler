@@ -12,10 +12,10 @@ class Rightscaler::Account < Rightscaler::Resource
   private
   
   def self.extract_session_cookie(response)
-    response.to_hash["set-cookie"].each do |cookie|
-      cookie = cookie.split("; ").first
-      return cookie if cookie =~ /session_id/
-    end
+    candidates = response.to_hash['set-cookie']
+    candidate = candidates.detect {|c| c.match(/session_id/) } || candidates.first
+    raise "No cookies" if candidate.nil?
+    candidate.split("; ").first
   end
 
 end

@@ -4,7 +4,7 @@ require "logger"
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 module Rightscaler
-  VERSION = "0.1"
+  VERSION = "0.1.3"
 end
 
 require 'rightscaler/resource'
